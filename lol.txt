@@ -1,2 +1,0 @@
-deb https://arkane-systems.github.io/wsl-transdebian/apt/ focal main
-deb-src https://arkane-systems.github.io/wsl-transdebian/apt/ focal mainapt updateapt update
