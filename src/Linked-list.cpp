@@ -12,9 +12,12 @@ const char* Free_link_color = "orange";
 #define CMP_EQ(a, b) (strcmp((a), (b)) == 0)
 
 void EntryCtor(Entry* ptr, HKey key, HValue value) {
+    char* ptr_ = (char*)0x280000002a;
     ptr->key = (char*) malloc(strlen(key) + 1);
     ptr->value = (char*) malloc(strlen(value) + 1);
-
+    if (ptr->key == ptr_ || ptr->value == ptr_) {
+        exit(-1);
+    }
     strcpy(ptr->key, key);
     strcpy(ptr->value, value);
     return;
@@ -61,9 +64,15 @@ void ctor_list(LinkedList* list) {
 
 void dtor_list(LinkedList* list) {
     assert(list && "list must not be NULL");
+    if (list->capacity == 0) return;
     // printf("%d line\n", __LINE__);
-
+    // for (size_t it = 0; it < list->capacity; ++it) {
+    //     if (list->data[it].elem.key == (char*)0xbf000000c1 ||list->data[it].elem.value == (char*)0xbf000000c1) {
+    //         printf("wtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtfwtf");
+    //     }
+    // }
     for (size_t it = 0; it < list->capacity; ++it) {
+        // printf("")
         safe_free(list->data[it].elem.key);
         safe_free(list->data[it].elem.value);
     }
@@ -78,18 +87,38 @@ void dtor_list(LinkedList* list) {
     return;
 }
 
-void push_back_list(LinkedList* list, Entry* val) {
-    insert_list(list, list->tail, val);
+void dtor_links_list(LinkedList* list) {
+    assert(list && "list must not be NULL");
+   
+    for (size_t it = 0; it < list->capacity; ++it) {
+        list->data[it].elem.key = NULL;
+        list->data[it].elem.value = NULL;
+    }
+
+    // printf("%d line\n", __LINE__);
+    safe_free(list->data);
+    list->head = list->tail = list->free_tail = -1;
+    list->size = list->capacity = size_t(0);
+    list->is_sorted = false;
+    // printf("%d line\n", __LINE__);
+
+    return;
 }
 
-void insert_list(LinkedList* list, int ind, Entry* val) {
+void push_back_list(LinkedList* list, HKey key, HValue value) {
+    insert_list(list, list->tail, key, value);
+}
+
+void insert_list(LinkedList* list, int ind, HKey key, HValue value) {
     assert(list && "List must not be NULL");
     assert(0 <= ind && size_t(ind) < list->capacity && "index out of range");
     assert(list->data[ind].prev != -1 && "item should be inserted after existing item");
     
     int n_elem_pos = pop_free_elem(list);
     
-    EntryLinkCtor(&list->data[n_elem_pos].elem, val);
+    // EntryLinkCtor(&list->data[n_elem_pos].elem, val);
+    list->data[n_elem_pos].elem.key = key;
+    list->data[n_elem_pos].elem.value = value;
 
     list->data[list->data[ind].next].prev = n_elem_pos;
     list->data[n_elem_pos].prev = ind;
@@ -105,9 +134,12 @@ void erase_list(LinkedList* list, int ind) {
     assert(list && "List must not be NULL");
     assert(0 < ind && size_t(ind) < list->capacity && "index out of range");
     assert(list->data[ind].prev != -1 && "item must exist");
-    safe_free(list->data[ind].elem.key);
-    free(list->data[ind].elem.value);
 
+    safe_free(list->data[ind].elem.key);
+    safe_free(list->data[ind].elem.value);
+    list->data[ind].elem.key = NULL;
+    list->data[ind].elem.value = NULL;
+    
     list->data[ list->data[ind].prev ].next = list->data[ind].next;
     list->data[ list->data[ind].next ].prev = list->data[ind].prev;
 
@@ -235,14 +267,14 @@ void realloc_list(LinkedList* list) {
 }
 
 void printlist(LinkedList* list) {
-    printf("   data: next:   :prev");
-    printf("\n");
+    printf("%d   data: next:   :prev----------------", list->size);
+    // printf("\n");
     for(size_t it = 0; it < list->capacity; ++it) {
-        printf("%2zu %7d %3d %3d \n", it, list->data[it].elem, list->data[it].next, list->data[it].prev);
+        printf("\t%lu \t%s \n", it, list->data[it].elem.key);
     }
     printf("\n");
-    printf("\n");
-    printf(" tail :%d  head: %d  free_tail %d \n\n", list->tail, list->head, list->free_tail);
+    // printf("\n");
+    // printf(" tail :%d  head: %d  free_tail %d \n\n", list->tail, list->head, list->free_tail);
 
 }
 
@@ -259,7 +291,7 @@ void add_free_elem(LinkedList* list, int ind) {
     } else {
         list->data[ind].next = list->free_tail;
     }
-
+    list->data[ind].elem.key = list->data[ind].elem.value = 0;
     list->free_tail = ind;
 
     return;
@@ -295,16 +327,16 @@ int listCreateGraph(LinkedList* list) {
     fprintf(file,   "   nodesep=1;\n");
     fprintf(file,   "   F[shape=\"circle\", color=\"blue\", label=\"Free\"];\n");
 
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
     for(size_t node = 0; node < list->capacity; ++node){
         fprintf(file, "   L%lu[shape=\"record\", label=\" %lu | {<lp%d> %s | <ln%d> %s} | {<lp%lu> %d | <ln%lu> %d}\"];\n", node, node, node, list->data[node].elem.key, node, list->data[node].elem.value, node, list->data[node].next, node, list->data[node].prev);
     }
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     for(size_t node = 0; node < list->capacity - 1; ++node){
         fprintf(file, "L%lu->L%lu[color=\"black\", weight=1000, style=\"invis\"];\n", node, node+1);
     }
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     for(size_t node = 0; node < list->capacity; ++node){
         fprintf(file, "L%lu->L%d[color=\"%s\", constraint=false];\n", node,list->data[node].next, ((list->data[node].prev == -1) ? Free_link_color : Next_link_color ));
@@ -312,24 +344,24 @@ int listCreateGraph(LinkedList* list) {
             fprintf(file, "L%lu->L%d[color=\"%s\", constraint=false];\n", node, list->data[node].prev, Prev_link_color);
         }
     }
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     fprintf(file, "F->L%d[color=\"%s\"];", list->free_tail, Free_link_color);
 
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     fprintf(file, "}");
     fclose(file);
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     char command[Max_cmd_len] = {};
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     sprintf(command, "dot %sLIST_DUMP_%d.dot -T png -o %sLIST_DUMP_%d.png", Img_dump_dir, nDump, Img_dump_dir, nDump);
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     system(command);
-    printf("%d line\n", __LINE__);
+    // printf("%d line\n", __LINE__);
 
     return nDump++;
 }

@@ -5,7 +5,8 @@
 #include <assert.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tools.hpp"
+#include "avx_tools.hpp"
+#include "alloc_tools.hpp"
 
 typedef char* HKey;
 typedef char* HValue;
@@ -48,11 +49,14 @@ void ctor_list(LinkedList* list);
 
 void dtor_list(LinkedList* list);
 
-void push_back_list(LinkedList* list, Entry* val);
+void dtor_links_list(LinkedList* list);
 
-void insert_list(LinkedList* list, int ind, Entry* val);
+void push_back_list(LinkedList* list, HKey key, HValue value);
+
+void insert_list(LinkedList* list, int ind, HKey key, HValue value);
 
 void erase_list(LinkedList* list, int ind);
+
 void erase_link_list(LinkedList* list, int ind);
 
 void sort_list(LinkedList* list);

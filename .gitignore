@@ -1,0 +1,8 @@
+*.d
+*.o
+
+dump/*.dot
+dump/*.png
+
+lol.txt
+temp.txt

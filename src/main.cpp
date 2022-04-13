@@ -1,51 +1,98 @@
 // #include "Linked-list.hpp"
 #include "Hash_table.hpp"
+#include <vector>
+#include <algorithm>
+#include <string>
 
+char *randstring(size_t length) {
 
+    static char charset[] = "abcdefghijklmnopqrstuvwxyz";        
+    // static char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789,.-#'?!";        
+    char *randomString = NULL;
 
+    if (length) {
+        randomString = (char*) malloc(sizeof(char) * (length +1));
+        // randomString[0] = 'a';
+        if (randomString) {            
+            for (int n = 0;n < length;n++) {            
+                int key = rand() % (int)(sizeof(charset) -1);
+                randomString[n] = charset[key];
+            }
+
+            randomString[length] = '\0';
+        }
+    }
+
+    return randomString;
+}
+#define DEBUG
+const size_t insert_num_target = 140000;
+const size_t rand_str_len = 15;
 int main() {
         
     Hashmap *map = HashmapCreate();
     Entry *tmp;
-    size_t i;
-    char *words[][10] = {
-        {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"},
-        {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"}
-    };
-     
-    for (i = 0; i < 2; i++) {
-    //  printf("lol%d\n", __LINE__);
-
-        Hashmap_insert(&map, words[0][i], words[1][i]);
+    bool lol = true; 
+    std::vector<std::string> strings;
+    for (size_t i = 0; i < insert_num_target; i++) {
+        char* key = randstring(10 + rand() % rand_str_len + 1);
+        char* value = randstring(10 + rand() % rand_str_len + 1);
+        if (lol) {
+            // printf("%s\n", key);
+            lol = false;
+        }
+        // if (key[0] == 'a') {
+        //     printf("key: %s,  value:%s\n", key, value);
+        //     // printf("")
+        // }
+        Hashmap_insert(&map, key, value);
+        // if (i % 10000 == 0) {
+        //     printf("i = %d\n", i);
+        //     printf("%d len\n", map->lists[0].capacity);
+        //     printf("%d cap\n", map->capacity);
+        // }
+        // strings.push_back(std::string(key));
+        free(key);
+        free(value);
     }
-    HValue ent = get(map, "two");
-    HValue ent2 = get(map, "one");
-    HValue ent3 = get(map, "f");
-    Entry* entrem = Hashmap_remove(map, "one");
-    printf("%s\n", ent);
-    printf("%s\n", ent2);
-    printf("key %s value %s removed\n", entrem->key, entrem->value);
-    if (ent3 == NULL) {
-        printf("isnull\n");
-    }
-    printf("%s\n", ent3);
-     printf("lol\n");
-    // mapIterate(map, printEntry, NULL);
-    destroyHashmap(&map);
-     
-    // for (i = 0; i < 10000; i++) {
-    //     map = createHashmap(2, 0.72f, 2.0f);
-    //     for (i = 0; i < 10; i++) {
-    //         put(&map, initAndCopy(words[0][i]), initAndCopy(words[1][i]));
-    //     }2648667574
-    //2648667574
-    // 2648667574
-    // 74
-    //     destroyHashmap(&map);
+    dprintf("%d line\n", __LINE__);
+    // std::sort(strings.begin(), strings.end());
+    dprintf("%d line\n", __LINE__);
+    // for (int it = 0; it < strings.size(); ++it) {
+    //     printf("key: %s\n", strings[it].c_str());
     // }
-     
- 
-    // _getch();
+    // printf("%d line\n", __LINE__);
+    
+#ifdef DEBUG
+    int* vals = (int*) malloc(sizeof(int) * map->capacity);
+    FILE* stats = fopen("temp.txt", "w");
+    fprintf(stats, "hash_num, bucket_size\n");
+    // printf("%d line\n", __LINE__);
+    // printf("%ld\n", (int64_t)stats);
+    // printf("%d line\n", __LINE__);
+    int cnt = 0;
+    int sum = 0, non_zero = 0;
+    for (size_t i = 0; i < map->capacity; i++) {
+        fprintf(stats, "%lu,\t%lu\n", i, map->lists[i].size);
+        vals[i] = map->lists[i].size;
+        cnt += map->lists[i].size;
+        if ( map->lists[i].size) {
+            sum += map->lists[i].size;
+            ++non_zero;
+        }
+        // printf("ind:%lu ", i);
+        // printlist(&map->lists[i]);
 
+    }
+    fclose(stats);
+    printf("%d size\n", cnt);
+    free(vals);
+    
+#endif
+    
+    dprintf("%d line\n", __LINE__);
+    destroyHashmap(&map);
+    dprintf("%d line\n", __LINE__);
+    dprintf("%f mid\n", (float) sum / non_zero);
     return 0;
 }
