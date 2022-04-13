@@ -8,4 +8,5 @@ dump/*.png
 bin/*.d
 bin/*.o
 lol.txt
+*/temp.txt
 temp.txt

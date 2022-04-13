@@ -4,6 +4,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 �� ������ 䠩�: -NAME
 
 ��� ����㯠: ./SRC
+
 �� ������ 䠩�: -NAME
 
 ��� ����㯠: ./SRC
@@ -19,12 +20,10 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Apr 13 16:54:16 2022
+# Make data base, printed on Wed Apr 13 17:45:20 2022
 
 # Variables
 
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
 SYSTEMDRIVE = C:
 # makefile (from 'Makefile', line 32)
@@ -40,13 +39,13 @@ VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
 # environment
 LOCALAPPDATA = C:\Users\Gekata\AppData\Local
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-27ca5b54-4911-4f80-90d4-90d07602d0aa-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-cdb138a1-3bef-4635-a7c7-4a5078b7b25b-sock
 # makefile (from 'Makefile', line 41)
 VPATH = echo $(subst \,/,$(dir $(SRC_FULL_PATH)))
 # makefile (from 'Makefile', line 16)
 SRC_DIR = src
 # environment
-VSCODE_CWD = C:\Users\Gekata\AppData\Local\Programs\Microsoft VS Code
+VSCODE_CWD = C:\Users\Gekata\Desktop\GitProjects
 # environment
 CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
 # environment
@@ -60,11 +59,9 @@ MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
 @D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_7904_YBLWTGOQWKNUHMTM
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13192_ZGGPFRNZZCCXMFDX
 # environment
 VS160COMCOMNTOOLS = D:\Programs\Common7\Tools\
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -78,7 +75,7 @@ VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Gekata\AppData\Roaming\Code\CachedData\8dfae7a5cd50421d10cd99cb873990460525a898
+VSCODE_CODE_CACHE_PATH = C:\Users\Gekata\AppData\Roaming\Code\CachedData\dfd34e8260c270da74b5c2d86d61aee4b6d56977
 # environment
 LANG = C
 # default
@@ -94,7 +91,8 @@ MAKEFLAGS = pqrR
 # environment
 ONEDRIVE = C:\Users\Gekata\OneDrive
 # makefile
-CURDIR := c:/Users/Gekata/Desktop/GitProjects/Hashmap
+CURDIR := c:/Users/Gekata/Desktop/GitProjects/Hashmap_ 
+no_intr
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -122,7 +120,7 @@ MAKEFILE_LIST := Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 7904
+VSCODE_PID = 13192
 # automatic
 ?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
 # environment
@@ -134,7 +132,7 @@ GDB = C:\MinGW\bin\gdb.exe
 # environment
 VTUNE_PROFILER_2022_DIR = C:\Program Files (x86)\Intel\oneAPI\vtune\2022.2.0
 # environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"1efd7555d7584e5d83e43ad36f58bd35.ru","_translationsConfigFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\1efd7555d7584e5d83e43ad36f58bd35.ru\\tcf.json","_cacheRoot":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\1efd7555d7584e5d83e43ad36f58bd35.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\1efd7555d7584e5d83e43ad36f58bd35.ru\\8dfae7a5cd50421d10cd99cb873990460525a898","_corruptedFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\1efd7555d7584e5d83e43ad36f58bd35.ru\\corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"2b7693ea843d12cbb2e09a3b62281ac8.ru","_translationsConfigFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\tcf.json","_cacheRoot":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\corrupted.info","_languagePackSupport":true}
 # environment
 ONEAPI_ROOT = C:\Program Files (x86)\Intel\oneAPI\
 # environment
@@ -201,8 +199,10 @@ USERDOMAIN = DESKTOP-HNINT23
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
+# environment
+__COMPAT_LAYER = DetectorsAppHealth
 # makefile
-.DEFAULT_GOAL := build-debug/Hashmap.out
+.DEFAULT_GOAL := build-debug/Hashmap_no_intr.out
 # default
 MAKE_VERSION := 4.3
 # 'override' directive
@@ -212,8 +212,7 @@ LIB_DEPEND =
 # environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # makefile (from 'Makefile', line 13)
-BUILD =  
-Debug
+BUILD = Debug
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-HNINT23
 # environment
@@ -245,7 +244,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\Gekata\AppData\Local\Temp
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\60210fc64f999dcfc99549c07e756371-1.66.1-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\60210fc64f999dcfc99549c07e756371-1.66.2-main-sock
 # environment
 COMPILERS = D:\Compilers\Tools
 # default
@@ -263,8 +262,8 @@ OUT_FILE_NAME = $(APPLICATION).out
 # environment
 SESSIONNAME = Console
 # makefile (from 'Makefile', line 21)
-CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mavx -mavx2 -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2  -mavx512f  -mavx512pf  -mavx512er  -mavx512cd  -mavx512vl -mavx512bw  
- -mavx512dq  -mavx512ifma  -mavx512vbmi  -msha  -maes  -O2 -g -fdiagnostics-color=always
+CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mavx -mavx2 -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2  -mavx512f  -mavx512pf  -mavx512er  -mavx512cd  -mavx512vl -mavx512bw  -mavx512dq  -mavx512ifma  -mavx512vbmi  -msha  -maes  -O2 -g -fdiagnostic 
+s-color=always
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
 # environment
@@ -274,7 +273,7 @@ CC = gcc
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # variable set hash-table stats:
-# Load=124/1024=12%, Rehash=0, Collisions=22/188=12%
+# Load=123/1024=12%, Rehash=0, Collisions=21/187=11%
 
 # Pattern-specific Variable Values
 
@@ -283,9 +282,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 # Directories
 
 # echo: could not be stat'd.
-# . (key c:/Users/Gekata/Desktop/GitProjects/Hashmap, mtime 1649857821): 15 files, no impossibilities.
+# . (key c:/Users/Gekata/Desktop/GitProjects/Hashmap_no_intr, mtime 1649860877): 14 files, no impossibilities.
 
-# 15 files, no impossibilities in 2 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -337,18 +336,18 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-.PHONY: init clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-build-debug/Hashmap.out: Makefile
+build-debug/Hashmap_no_intr.out: Makefile
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 45):
 	$(CC) $(OBJ) -o a.out $(LXXFLAGS)
 	./a.out
+
+.PHONY: init clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
 # Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
@@ -359,12 +358,13 @@ build-debug/Hashmap.out: Makefile
 # General ('VPATH' variable) search path:
 # echo
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 197 B / avg = 7 B
-# current buf: size = 8174 B / used = 197 B / count = 27 / avg = 7 B
+# strca 
+che buffers: 1 (0) / strings = 26 / storage = 196 B / avg = 7 B
+# current buf: size = 8174 B / used = 196 B / count = 26 / avg = 7 B
 
-# strcache performance: lookups = 42 / hit rate = 35%
+# strcache performance: lookups = 41 / hit rate = 36%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=0/42=0%
-# Finished Make data base on Wed Apr 13 16:54:16 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/41=0%
+# Finished Make data base on Wed Apr 13 17:45:20 2022
 
  

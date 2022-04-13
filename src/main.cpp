@@ -109,5 +109,20 @@ int main() {
     destroyHashmap(&map);
     dprintf("%d line\n", __LINE__);
     dprintf("%f mid\n", (float) sum / non_zero);
+    uint64_t a = 10, b = 5;
+    char* m_str = "abcde";
+
+    printf("%lu %lu", a, b);
     return 0;
 } 
+
+
+
+// uint64_t strHashCode(char* str) {
+//     uint64_t hash = 1234;
+//     while (*str) {
+//         hash = ((hash << 7) + hash) ^ *(str++);
+//     }
+
+//     return hash;
+// }
