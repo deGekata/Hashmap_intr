@@ -1,8 +1,11 @@
 *.d
 *.o
+*.out
+*.exe
 
 dump/*.dot
 dump/*.png
-
+bin/*.d
+bin/*.o
 lol.txt
 temp.txt
