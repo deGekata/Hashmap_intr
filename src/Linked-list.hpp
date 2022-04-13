@@ -18,7 +18,7 @@ typedef struct Entry {
 } Entry;
 
 
-void EntryCtor(Entry* ptr, HKey key, HValue value);//fffffffffff
+void EntryCtor(Entry* ptr, HKey key, HValue value); //fffffffffff
 void EntryCtor(Entry* ptr, Entry* ref);//fffffffffff
 
 void EntryLinkCtor(Entry* ptr, Entry* ref);
