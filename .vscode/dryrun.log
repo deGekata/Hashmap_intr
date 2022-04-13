@@ -2,18 +2,21 @@ make.exe --dry-run --always-make --keep-going --print-directory
 make: Entering directory 'c:/Users/Gekata/Desktop/GitProjects/Hashmap'
  
 ��� ����㯠: ./SRC
+
 �� ������ 䠩�: -NAME
+
 ��� ����㯠: ./SRC
 �� ������ 䠩�: -NAME
 
 ��� ����㯠: ./SRC
+
 �� ������ 䠩�: -NAME
 
 ��� ����㯠: ./SRC
 
 �� ������ 䠩�: -NAME
 
-g++  -o a.out 
+gcc  -o a.out 
 ./a.out
 make: Leaving directory 'c:/Users/Gekata/Desktop/GitProjects/Hashmap'
  

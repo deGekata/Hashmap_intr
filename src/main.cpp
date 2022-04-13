@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <string>
 
+unsigned int _mm_encodekey128_u32 (unsigned int __htype, __m128i __key, void* __h);
+
 char *randstring(size_t length) {
 
     static char charset[] = "abcdefghijklmnopqrstuvwxyz";        
@@ -25,9 +27,14 @@ char *randstring(size_t length) {
 
     return randomString;
 }
+
+
+
 #define DEBUG
+#undef DEBUG
 const size_t insert_num_target = 140000;
 const size_t rand_str_len = 15;
+
 int main() {
         
     Hashmap *map = HashmapCreate();
@@ -89,10 +96,18 @@ int main() {
     free(vals);
     
 #endif
-    
+    dprintf("%d line\n", __LINE__);
+    // aligned_alloc()
+    char* mmm = (char*) _aligned_malloc(1000, 1024);
+    printf("1024-byte aligned addr: %p\n", (void*)mmm);
+    dprintf("%d line\n", __LINE__);
+    mmxi_t _255(8);
+    dprintf("%d line\n", __LINE__);
+    int res = 0;
+    // int res = _mm_encodekey128_u32(12, _255, mmm);
     dprintf("%d line\n", __LINE__);
     destroyHashmap(&map);
     dprintf("%d line\n", __LINE__);
     dprintf("%f mid\n", (float) sum / non_zero);
     return 0;
-}
+} 
