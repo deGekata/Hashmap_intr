@@ -1,22 +1,7 @@
-make.exe --dry-run --always-make --keep-going --print-directory
-make: Entering directory 'c:/Users/Gekata/Desktop/GitProjects/Hashmap_no_intr'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr'
  
-��� ����㯠: ./SRC
-�� ������ 䠩�: -NAME
-
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
-gcc  -o a.out 
+gcc bin/alloc_tools.o bin/avx_tools.o bin/Hash_table.o bin/hash_tools.o bin/Linked-list.o bin/main.o bin/string_tools.o -o a.out 
 ./a.out
-make: Leaving directory 'c:/Users/Gekata/Desktop/GitProjects/Hashmap_no_intr'
+make: Leaving directory '/mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr'
  

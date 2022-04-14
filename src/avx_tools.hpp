@@ -33,3 +33,5 @@ union mmxi_t {
 
     int& operator[](size_t n);
 };
+
+int my_asm_cmp(const char* first, const char* second);

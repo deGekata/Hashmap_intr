@@ -1,279 +1,189 @@
-make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
-��� ����㯠: ./SRC
-
-�� ������ 䠩�: -NAME
-
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
-# GNU Make 4.3
-# Built for Windows32
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Apr 13 17:45:20 2022
+# Make data base, printed on Thu Apr 14 15:20:04 2022
 
 # Variables
 
-# environment
-SYSTEMDRIVE = C:
-# makefile (from 'Makefile', line 32)
-OBJ = $(addprefix $(BIN_DIR)/, $(SRC:.cpp=.o))
-# environment
-LC_ALL = C
-# makefile (from 'Makefile', line 31)
-SRC = $(filter-out $(EXLUDED),$(notdir $(SRC_FULL_PATH)))
-# environment
-USERPROFILE = C:\Users\Gekata
-# environment
-VBOX_MSI_INSTALL_PATH = C:\Program Files\Oracle\VirtualBox\
-# environment
-LOCALAPPDATA = C:\Users\Gekata\AppData\Local
-# environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-cdb138a1-3bef-4635-a7c7-4a5078b7b25b-sock
-# makefile (from 'Makefile', line 41)
-VPATH = echo $(subst \,/,$(dir $(SRC_FULL_PATH)))
-# makefile (from 'Makefile', line 16)
-SRC_DIR = src
-# environment
-VSCODE_CWD = C:\Users\Gekata\Desktop\GitProjects
-# environment
-CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
-# environment
-SYSTEMROOT = C:\Windows
-# environment
-PROCESSOR_LEVEL = 6
-# environment
-PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
-# default
-MAKE_COMMAND := C:/ProgramData/chocolatey/lib/make/tools/install/bin/make.exe
 # automatic
-@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
-# environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_13192_ZGGPFRNZZCCXMFDX
-# environment
-VS160COMCOMNTOOLS = D:\Programs\Common7\Tools\
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# automatic
-%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
-# automatic
-^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
-# environment
-VSCODE_LOG_STACK = false
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Gekata\AppData\Roaming\Code\CachedData\dfd34e8260c270da74b5c2d86d61aee4b6d56977
-# environment
-LANG = C
-# default
-.LOADED := 
-# environment
-TMP = C:\Users\Gekata\AppData\Local\Temp
-# default
-.INCLUDE_DIRS = .
-# environment
-PROCESSOR_ARCHITEW6432 = AMD64
-# makefile
-MAKEFLAGS = pqrR
-# environment
-ONEDRIVE = C:\Users\Gekata\OneDrive
-# makefile
-CURDIR := c:/Users/Gekata/Desktop/GitProjects/Hashmap_ 
-no_intr
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# automatic
-*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
-# makefile (from 'Makefile', line 2)
-APPLICATION = $(notdir $(CURDIR))
-# environment
-PROGRAMFILES = C:\Program Files (x86)
-# environment
-MFLAGS = -pqrR
-# default
-.SHELLFLAGS := -c
-# makefile (from 'Makefile', line 30)
-EXLUDED = 
-# environment
-COMMONPROGRAMW6432 = C:\Program Files\Common Files
-# automatic
-+D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
-# automatic
-@F = $(notdir $@)
-# environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 13192
-# automatic
-?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
-# environment
-GDB = C:\MinGW\bin\gdb.exe
-# automatic
-*F = $(notdir $*)
-# automatic
-<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
-# environment
-VTUNE_PROFILER_2022_DIR = C:\Program Files (x86)\Intel\oneAPI\vtune\2022.2.0
-# environment
-VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"2b7693ea843d12cbb2e09a3b62281ac8.ru","_translationsConfigFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\tcf.json","_cacheRoot":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru","_resolvedLanguagePackCoreLocation":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\dfd34e8260c270da74b5c2d86d61aee4b6d56977","_corruptedFile":"C:\\Users\\Gekata\\AppData\\Roaming\\Code\\clp\\2b7693ea843d12cbb2e09a3b62281ac8.ru\\corrupted.info","_languagePackSupport":true}
-# environment
-ONEAPI_ROOT = C:\Program Files (x86)\Intel\oneAPI\
-# environment
-ONEDRIVECONSUMER = C:\Users\Gekata\OneDrive
-# default
-MAKE_HOST := Windows32
-# environment
-PROGRAMDATA = C:\ProgramData
-# default
-SHELL := sh.exe
-# environment
-HOMEPATH = \Users\Gekata
-# default
-MAKECMDGOALS := all
-# environment
-DRIVERDATA = C:\Windows\System32\Drivers\DriverData
-# environment
-COMSPEC = C:\Windows\system32\cmd.exe
-# environment
-WINDIR = C:\Windows
-# environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
-# environment
-PATH = C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\MiKTeX\miktex\bin\x64\;C;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Compilers\Tools;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\NASM;C:\Program Files\AMD\AMDuProf\bin;C:\Users\Gekata\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Gekata\AppData\Local\Programs\Python\Python38\;C:\Users\Gekata\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Gekata\AppData\Local\Programs\Python\Python39\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Gekata\AppData\Local\Microsoft\WindowsApps;C:\Users\Gekata\.dotnet\tools;C:\Users\Gekata\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Gekata\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\MinGW\bin;C:\Users\Gekata\AppData\Local\atom\bin
-# environment
-COMPUTERNAME = DESKTOP-HNINT23
-# makefile (from 'Makefile', line 3)
-GXX_STANDARD = 17 
-# default
-MAKEFILES := 
-# automatic
-^F = $(notdir $^)
-# environment
-PROMPT = $P$G
-# environment
-CHOCOLATEYLASTPATHUPDATE = 132713909563164510
-# environment
-LOGONSERVER = \\DESKTOP-HNINT23
-# environment
-VSCODE_LOG_NATIVE = false
-# makefile (from 'Makefile', line 22)
-BUILD_PATH = build-debug
-# environment
-USERNAME = Gekata
-# environment
-COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+<D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
 # environment
-PROGRAMW6432 = C:\Program Files
+WSLENV = VSCODE_WSL_EXT_LOCATION/up
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 33)
+OBJ = $(addprefix $(BIN_DIR)/, $(SRC:.cpp=.o))
+# makefile (from 'Makefile', line 32)
+SRC = $(filter-out $(EXLUDED),$(notdir $(SRC_FULL_PATH)))
 # environment
-PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
-# makefile (from 'Makefile', line 35)
-LIB_PATH = 
+VSCODE_LOG_NATIVE = false
 # automatic
-+F = $(notdir $+)
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# automatic
+@F = $(notdir $@)
+# makefile
+CURDIR := /mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr
+# makefile
+SHELL = /bin/sh
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{}}
 # environment
-USERDOMAIN = DESKTOP-HNINT23
+_ = /home/gekata/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/node
+# makefile (from 'bin/string_tools.d', line 1)
+MAKEFILE_LIST :=  Makefile bin/alloc_tools.d bin/avx_tools.d bin/Hash_table.d bin/hash_tools.d bin/Linked-list.d bin/main.d bin/string_tools.d
 # 'override' directive
 GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 22)
+CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O0 -g -fdiagnostics-color=always
 # environment
-OS = Windows_NT
+XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-__COMPAT_LAYER = DetectorsAppHealth
-# makefile
-.DEFAULT_GOAL := build-debug/Hashmap_no_intr.out
+VSCODE_VERBOSE_LOGGING = true
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /mnt/c/Users/Gekata/AppData/Local/Programs/Microsoft VS Code
 # default
-MAKE_VERSION := 4.3
-# 'override' directive
-.SHELLSTATUS := 1
-# makefile (from 'Makefile', line 36)
-LIB_DEPEND = 
+MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PROGRAMFILES(X86) = C:\Program Files (x86)
+PATH = /home/gekata/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/MiKTeX/miktex/bin/x64/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/Compilers/Tools:/mnt/c/Program Files/Cloudflare/Cloudflare WARP/:/mnt/c/Program Files/NASM:/mnt/c/Program Files/AMD/AMDuProf/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/Gekata/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gekata/.dotnet/tools:/mnt/c/Users/Gekata/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/MinGW/bin:/mnt/c/Users/Gekata/AppData/Local/atom/bin:/snap/bin
+# environment
+NAME = DESKTOP-HNINT23
+# makefile (from 'Makefile', line 42)
+VPATH = echo $(subst \,/,$(dir $(SRC_FULL_PATH)))
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f9a61725-d410-44be-9b7b-99bf832bb6b0.sock
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
+%F = $(notdir $%)
 # makefile (from 'Makefile', line 13)
-BUILD = Debug
+LXXFLAGS = 
 # environment
-USERDOMAIN_ROAMINGPROFILE = DESKTOP-HNINT23
-# environment
-NUMBER_OF_PROCESSORS = 12
-# environment
-PUBLIC = C:\Users\Public
-# environment
-ASL.LOG = Destination=file
-# environment
-APPDATA = C:\Users\Gekata\AppData\Roaming
-# environment
-HOMEDRIVE = C:
-# environment
-AMDPROFILERPATH = C:\Program Files\AMD\AMDuProf\bin
-# environment
-PROCESSOR_ARCHITECTURE = x86
-# environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
-# makefile (from 'Makefile', line 29)
+VSCODE_PIPE_LOGGING = true
+# makefile (from 'Makefile', line 30)
 SRC_FULL_PATH = $(shell find ./src -name "*.cpp")
 # environment
-COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
-# environment
-VS2019INSTALLDIR = D:\Programs
-# makefile (from 'Makefile', line 17)
-BIN_DIR = bin
-# environment
-ELECTRON_RUN_AS_NODE = 1
-# environment
-TEMP = C:\Users\Gekata\AppData\Local\Temp
-# environment
-VSCODE_IPC_HOOK = \\.\pipe\60210fc64f999dcfc99549c07e756371-1.66.2-main-sock
-# environment
-COMPILERS = D:\Compilers\Tools
+PWD = /mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr
 # default
-.RECIPEPREFIX := 
+.LOADED := 
+# environment
+WSL_INTEROP = /run/WSL/31_interop
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/gekata
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+LOGNAME = gekata
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
-<F = $(notdir $<)
-# makefile (from 'Makefile', line 12)
-LXXFLAGS = 
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 23)
+BUILD_PATH = build-debug
 # default
-SUFFIXES := 
-# environment
-ALLUSERSPROFILE = C:\ProgramData
-# makefile (from 'Makefile', line 4)
-OUT_FILE_NAME = $(APPLICATION).out
-# environment
-SESSIONNAME = Console
-# makefile (from 'Makefile', line 21)
-CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mavx -mavx2 -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2  -mavx512f  -mavx512pf  -mavx512er  -mavx512cd  -mavx512vl -mavx512bw  -mavx512dq  -mavx512ifma  -mavx512vbmi  -msha  -maes  -O2 -g -fdiagnostic 
-s-color=always
+MAKE = $(MAKE_COMMAND)
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync load
+MAKECMDGOALS := all
 # environment
-PROCESSOR_REVISION = 9e0a
+SHLVL = 0
 # makefile (from 'Makefile', line 7)
 CC = gcc
+# default
+MAKE_VERSION := 4.2.1
 # environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+USER = gekata
+# makefile
+.DEFAULT_GOAL := build-debug/Hashmap_intr.out
+# makefile (from 'Makefile', line 36)
+LIB_PATH = 
+# environment
+LIBVIRT_DEFAULT_URI = qemu:///system
+# makefile (from 'Makefile', line 31)
+EXLUDED = 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Gekata/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.0
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 4)
+OUT_FILE_NAME = $(APPLICATION).out
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 37)
+LIB_DEPEND = 
+# automatic
++F = $(notdir $+)
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 17)
+SRC_DIR = src
+# makefile (from 'Makefile', line 14)
+BUILD = Debug
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 18)
+BIN_DIR = bin
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 3)
+GXX_STANDARD = 17 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 2)
+APPLICATION = $(notdir $(CURDIR))
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=123/1024=12%, Rehash=0, Collisions=21/187=11%
+# Load=85/1024=8%, Rehash=0, Collisions=12/158=8%
 
 # Pattern-specific Variable Values
 
@@ -281,53 +191,60 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
 
 # Directories
 
+# . (device 46, inode 7036874418031878): 19 files, no impossibilities.
+# ./src (device 46, inode 18858823439883577): 15 files, no impossibilities.
 # echo: could not be stat'd.
-# . (key c:/Users/Gekata/Desktop/GitProjects/Hashmap_no_intr, mtime 1649860877): 14 files, no impossibilities.
 
-# 14 files, no impossibilities in 2 directories.
+# 34 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 bin/%.o: %.cpp Makefile
-#  recipe to execute (from 'Makefile', line 53):
+#  recipe to execute (from 'Makefile', line 54):
 	$(CC) $< -c -o $@ $(CXXFLAGS)
 
 bin/%.d: %.cpp Makefile
-#  recipe to execute (from 'Makefile', line 57):
+#  recipe to execute (from 'Makefile', line 58):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # 2 implicit rules, 0 (0.0%) terminal.
+
 # Files
 
 # Not a target:
-Makefile:
+src/Hash_table.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-13 03:42:00
+#  Last modified 2022-04-14 02:38:31.1074582
 #  File has been updated.
 #  Successfully updated.
 
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 65):
-	if exist $(BIN_DIR) rmdir /S /Q $(BIN_DIR)
-
 # Not a target:
-.DEFAULT:
+./src/string_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 02:10:37.3689783
+#  File has been updated.
+#  Successfully updated.
+
+bin/avx_tools.o: src/avx_tools.cpp src/avx_tools.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-init:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 61):
-	if not exist $(BIN_DIR) md $(BIN_DIR)
-	if not exist $(BUILD_PATH) md $(BUILD_PATH)
+# Not a target:
+./src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:10:46.755876
+#  File has been updated.
+#  Successfully updated.
+
+bin/alloc_tools.d: ./src/alloc_tools.cpp Makefile src/alloc_tools.cpp src/alloc_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'alloc_tools'
+#  Last modified 2022-04-14 15:19:59.5463792
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # Not a target:
 all:
@@ -336,35 +253,268 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-build-debug/Hashmap_no_intr.out: Makefile
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 45):
-	$(CC) $(OBJ) -o a.out $(LXXFLAGS)
-	./a.out
-
 .PHONY: init clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/avx_tools.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:03:17.9839525
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+./src/hash_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 03:07:10.6440991
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+./src/Hash_table.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:19:43.9731271
+#  File has been updated.
+ 
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:19:56.1316132
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/alloc_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-13 03:06:17.7926385
+#  File has been updated.
+#  Successfully updated.
+
+bin/Linked-list.d: ./src/Linked-list.cpp Makefile src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Linked-list'
+#  Last modified 2022-04-14 15:19:59.396524
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+# Not a target:
+./src/avx_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:01:08.8486393
+#  File has been updated.
+#  Successfully updated.
+
+bin/alloc_tools.o: src/alloc_tools.cpp src/alloc_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/alloc_tools.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-13 19:29:54.3079233
+#  File has been updated.
+#  Successfully updated.
+
+bin/string_tools.d: ./src/string_tools.cpp Makefile src/string_tools.cpp src/string_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'string_tools'
+#  Last modified 2022-04-14 15:19:59.2516011
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+bin/main.d: ./src/main.cpp Makefile src/main.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-04-14 15:19:59.3354741
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+# Not a target:
+src/Linked-list.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:03:38.6922101
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/hash_tools.d: ./src/hash_tools.cpp Makefile src/hash_tools.cpp src/hash_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'hash_tools'
+#  Last modified 2022-04-14 15:19:59.41795
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+bin/Linked-list.o: src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+./src/alloc_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-13 03:06:17.7926385
+#  File has been updated.
+#  Successfully updated.
+
+bin/Hash_table.d: ./src/Hash_table.cpp Makefile src/Hash_table.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Hash_table'
+#  Last modified 2022-04-14 15:19:59.4773537
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+# Not a target:
+src/Linked-list.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 02:40:26.602528
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/string_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 02:10:37.3689783
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:10:46.755876
+#  File has been updated.
+#  Successfully updated.
+
+init:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 62):
+	if not exist $(BIN_DIR) md $(BIN_DIR)
+	if not exist $(BUILD_PATH) md $(BUILD_PATH)
+
+bin/avx_tools.d: ./src/avx_tools.cpp Makefile src/avx_tools.cpp src/avx_tools.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'avx_tools'
+#  Last modified 2022-04-14 15:19:59.522378
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 58):
+	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
+
+bin/string_tools.o: src/string_tools.cpp src/string_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/main.o: src/main.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/string_tools.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 02:07:45.6662803
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/Hash_table.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:19:43.9731271
+#  File has been updated.
+#  Successfully updated.
+
+bin/hash_tools.o: src/hash_tools.cpp src/hash_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+./src/Linked-list.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:03:38.6922101
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/hash_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 03:07:10.6440991
+#  File has been updated.
+#  Successfully updated.
+
+build-debug/Hashmap_intr.out: bin/alloc_tools.o bin/avx_tools.o bin/Hash_table.o bin/hash_tools.o bin/Linked-list.o bin/main.o bin/string_tools.o Makefile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 46):
+	$(CC) $(OBJ) -o a.out $(LXXFLAGS)
+	./a.out
+
+# Not a target:
+src/hash_tools.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 02:41:46.5997348
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 66):
+	if exist $(BIN_DIR) rmdir /S /Q $(BIN_DIR)
+
+bin/Hash_table.o: src/Hash_table.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/avx_tools.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-14 15:01:08.8486393
+#  File has been updated.
+#  Successfully updated.
+
 # files hash-table stats:
-# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
+# Load=42/1024=4%, Rehash=0, Collisions=9/213=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # General ('VPATH' variable) search path:
-# echo
+# echo:./src:./src:./src:./src:./src:./src:./src
 
-# strca 
-che buffers: 1 (0) / strings = 26 / storage = 196 B / avg = 7 B
-# current buf: size = 8174 B / used = 196 B / count = 26 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 88 / storage = 1190 B / avg = 13 B
+# current buf: size = 8162 B / used = 1190 B / count = 88 / avg = 13 B
 
-# strcache performance: lookups = 41 / hit rate = 36%
+# strcache performance: lookups = 197 / hit rate = 55%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=0/41=0%
-# Finished Make data base on Wed Apr 13 17:45:20 2022
+# Load=88/8192=1%, Rehash=0, Collisions=10/197=5%
+# Finished Make data base on Thu Apr 14 15:20:04 2022
 
  

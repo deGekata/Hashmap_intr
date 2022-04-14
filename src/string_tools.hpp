@@ -1,0 +1,1 @@
+int my_strcmp(const char* first, const char* second);

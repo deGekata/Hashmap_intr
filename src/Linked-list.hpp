@@ -7,12 +7,14 @@
 #include <string.h>
 #include "avx_tools.hpp"
 #include "alloc_tools.hpp"
-
+#include "string_tools.hpp"
+#include "hash_tools.hpp"
 typedef char* HKey;
 typedef char* HValue;
 
 
 typedef struct Entry {
+    uint64_t hash;
     HKey key;
     HValue value;
 } Entry;
@@ -60,6 +62,8 @@ void erase_list(LinkedList* list, int ind);
 void erase_link_list(LinkedList* list, int ind);
 
 void sort_list(LinkedList* list);
+
+__attribute__((noinline)) int strcmp_decorator(const char* first, const char* second);
 
 int find_item_list(LinkedList* list, Entry* val);
 

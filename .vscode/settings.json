@@ -1,6 +1,10 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "initializer_list": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xutility": "cpp"
     }
 }

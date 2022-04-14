@@ -1,47 +1,6 @@
 #include "Hash_table.hpp"
 
-uint64_t strHashCode(char* str) {
-    uint64_t hash = 1234;
-    while (*str) {
-        hash = ((hash << 7) + hash) ^ *(str++);
-    }
 
-    return hash;
-}
-
-uint64_t asciiHashCode(char* str) {
-    // uint64_t hash = 1234;
-    // printf("%d\n", str[0]);
-    return str[0];
-}
-
-uint64_t strlenHashCode(char* str) {
-    uint64_t hash = 1234;
-    
-    return hash + strlen(str);
-}
-
-uint64_t sumHashCode(char* str) {
-    uint64_t hash = 0;
-    while (*str) {
-        hash += *(str++);
-    }
-
-    return hash;
-}
-
-uint64_t rollHashCode(char* str) {
-    uint64_t hash = str[0];
-    while (*str) {
-        hash = ((hash >> 1) | (hash << 63)) ^ *(str++);
-    }
-
-    return hash;
-}
-
-uint64_t constOneHashCode(char* str) {
-    return 1;
-}
 
 Hashmap* HashmapCreate() {
     Hashmap* map = (Hashmap*) malloc(sizeof(Hashmap));
@@ -49,6 +8,7 @@ Hashmap* HashmapCreate() {
     map->size = 0;
     map->lists = (LinkedList*) calloc(map->capacity, sizeof(LinkedList));
     map->remap_size = map->capacity * hashmap_max_load;
+    // map->remap_size = 700;
     return map;
 }
 
@@ -58,6 +18,7 @@ Hashmap* HashmapCreate(size_t capacity) {
     map->size = 0;
     map->lists = (LinkedList*) calloc(map->capacity, sizeof(LinkedList));
     map->remap_size = map->capacity * hashmap_max_load;
+    // map->remap_size = 700;
     return map;
 }
 
@@ -102,8 +63,14 @@ void Hashmap_insert(Hashmap **_map_, HKey key, HValue value) {
     //     exit(-1);
     // }
     // EntryCtor(e, key, value);
+#ifndef ASM_ALLOC
     HKey n_key  = (char*) malloc(strlen(key) + 1);
     HKey n_value  = (char*) malloc(strlen(value) + 1);
+#else
+    if (strlen(key) > 31 || strlen(value) > 31) return;
+    HKey n_key  = (char*) aligned_alloc(32, 32);
+    HKey n_value  = (char*) aligned_alloc(32, 32);
+#endif
     // ptr->value = (char*) malloc(strlen(value) + 1);
     strcpy(n_key, key);
     strcpy(n_value, value);
@@ -153,12 +120,21 @@ HValue get(Hashmap *map, HKey key) {
     unsigned long long hash = HASHCODE(key);
     size_t index = (hash % map->capacity);
     HValue retVal = NULL;
+#ifndef ASM_ALLOC
+    HKey n_value  = key;
+#else
+    HKey n_value  = (char*) aligned_alloc(32, 32);
+    strcpy(n_value, key);
+#endif
     if (map->lists[index].capacity != 0) {
-        int find_ind =  find_item_list(&map->lists[index], key);
+        int find_ind =  find_item_list(&map->lists[index], n_value);
         if (find_ind) {
             retVal = map->lists[index].data[find_ind].elem.value;
         }
     }
+#ifdef ASM_ALLOC
+    free(n_value);
+#endif
     return retVal;
 }
 
@@ -167,9 +143,15 @@ Entry* Hashmap_remove(Hashmap *map, HKey key) {
     unsigned long long hash = HASHCODE(key);
     size_t index = (hash % map->capacity);
     Entry *content = NULL;
- 
+#ifndef ASM_ALLOC
+    HKey n_value  = key;
+#else
+    HKey n_value  = (char*) aligned_alloc(32, 32);
+    strcpy(n_value, key);
+#endif
+
     if (map->lists[index].capacity != 0) {
-        int find_ind =  find_item_list(&map->lists[index], key);
+        int find_ind =  find_item_list(&map->lists[index], n_value);
         if (find_ind) {
             content = (Entry*) malloc(sizeof(Entry));
             content->key = map->lists[index].data[find_ind].elem.key;
@@ -177,7 +159,10 @@ Entry* Hashmap_remove(Hashmap *map, HKey key) {
             erase_link_list(&map->lists[index], find_ind);
         }
     }
-
+    
+#ifdef ASM_ALLOC
+    free(n_value);
+#endif
     map->size--;
     return content;
 }

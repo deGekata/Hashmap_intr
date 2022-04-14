@@ -9,7 +9,8 @@ const char* Next_link_color = "blue";
 const char* Prev_link_color = "red";
 const char* Free_link_color = "orange";
 
-#define CMP_EQ(a, b) (strcmp((a), (b)) == 0)
+#define CMP_EQ(a, b) (my_strcmp((a), (b)) == 0)
+// #define CMP_EQ(a, b) (my_asm_cmp((a), (b)) == 0)
 
 void EntryCtor(Entry* ptr, HKey key, HValue value) {
     char* ptr_ = (char*)0x280000002a;
@@ -210,6 +211,11 @@ void sort_list(LinkedList* list) {
 
     return;
 }
+
+__attribute__((noinline)) int  strcmp_decorator(const char* first, const char* second) {
+    return strcmp(first, second);
+}
+
 
 int find_item_list(LinkedList* list, Entry* val) {
     int cur_ind = list->head;

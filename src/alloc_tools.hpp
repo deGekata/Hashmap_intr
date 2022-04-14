@@ -4,7 +4,7 @@
 #include "assert.h"
 #include "stdio.h"
 
-
+#define DEBUG
 #ifdef DEBUG
 #define dprintf(...) do{ fprintf( stderr, __VA_ARGS__ ); } while( false )
 #else

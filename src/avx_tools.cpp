@@ -48,3 +48,11 @@
  mmxi_t operator-(const mmxi_t& a, const mmxi_t& b) {
     return _mm_sub_epi32(a, b);
 }
+
+int my_asm_cmp(const char* first, const char* second) {
+    __m256i mfst = _mm256_load_si256((__m256i*) first);
+    __m256i mscd = _mm256_load_si256((__m256i*) second);
+    // return _mm_movemask_epi8(_mm_cmpeq_epi8(mfst, mscd));
+    return  1 + _mm256_movemask_epi8(_mm256_cmpeq_epi8(mfst, mscd));
+
+}

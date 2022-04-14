@@ -31,36 +31,40 @@ char *randstring(size_t length) {
 
 
 #define DEBUG
-#undef DEBUG
+// #undef DEBUG
 const size_t insert_num_target = 140000;
+const size_t find_num_target   = 1400000;
+const size_t remove_num_target = 1400000;
 const size_t rand_str_len = 15;
 
 int main() {
         
     Hashmap *map = HashmapCreate();
     Entry *tmp;
-    bool lol = true; 
-    std::vector<std::string> strings;
+    
     for (size_t i = 0; i < insert_num_target; i++) {
         char* key = randstring(10 + rand() % rand_str_len + 1);
         char* value = randstring(10 + rand() % rand_str_len + 1);
-        if (lol) {
-            // printf("%s\n", key);
-            lol = false;
-        }
-        // if (key[0] == 'a') {
-        //     printf("key: %s,  value:%s\n", key, value);
-        //     // printf("")
-        // }
         Hashmap_insert(&map, key, value);
-        // if (i % 10000 == 0) {
-        //     printf("i = %d\n", i);
-        //     printf("%d len\n", map->lists[0].capacity);
-        //     printf("%d cap\n", map->capacity);
-        // }
-        // strings.push_back(std::string(key));
         free(key);
         free(value);
+    }
+
+    for (size_t i = 0; i < find_num_target; i++) {
+        char* key = randstring(10 + rand() % rand_str_len + 1);
+
+        get(map, key);
+        free(key);
+        // free(value);
+    }
+
+    for (size_t i = 0; i < remove_num_target; i++) {
+        char* key = randstring(10 + rand() % rand_str_len + 1);
+        // char* value = randstring(10 + rand() % rand_str_len + 1);
+
+        Hashmap_remove(map, key);
+        free(key);
+        // free(value);
     }
     dprintf("%d line\n", __LINE__);
     // std::sort(strings.begin(), strings.end());
@@ -98,10 +102,11 @@ int main() {
 #endif
     dprintf("%d line\n", __LINE__);
     // aligned_alloc()
-    char* mmm = (char*) _aligned_malloc(1000, 1024);
+    // char* mmm = (char*) _aligned_malloc(1000, 1024);
+    char* mmm = (char*) aligned_alloc(1000, 1024);
     printf("1024-byte aligned addr: %p\n", (void*)mmm);
     dprintf("%d line\n", __LINE__);
-    mmxi_t _255(8);
+    // mmxi_t _255(8);
     dprintf("%d line\n", __LINE__);
     int res = 0;
     // int res = _mm_encodekey128_u32(12, _255, mmm);
@@ -110,19 +115,6 @@ int main() {
     dprintf("%d line\n", __LINE__);
     dprintf("%f mid\n", (float) sum / non_zero);
     uint64_t a = 10, b = 5;
-    char* m_str = "abcde";
-
-    printf("%lu %lu", a, b);
+ 
     return 0;
 } 
-
-
-
-// uint64_t strHashCode(char* str) {
-//     uint64_t hash = 1234;
-//     while (*str) {
-//         hash = ((hash << 7) + hash) ^ *(str++);
-//     }
-
-//     return hash;
-// }
