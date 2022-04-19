@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <string>
 
+extern int lol_func();
+
 unsigned int _mm_encodekey128_u32 (unsigned int __htype, __m128i __key, void* __h);
 
 char *randstring(size_t length) {
@@ -30,11 +32,14 @@ char *randstring(size_t length) {
 
 
 
+
+
+
 #define DEBUG
 // #undef DEBUG
-const size_t insert_num_target = 140000;
-const size_t find_num_target   = 1400000;
-const size_t remove_num_target = 1400000;
+const size_t insert_num_target = 1400000;
+const size_t find_num_target   = 14000000;
+const size_t remove_num_target = 14000000;
 const size_t rand_str_len = 15;
 
 int main() {
@@ -78,9 +83,6 @@ int main() {
     int* vals = (int*) malloc(sizeof(int) * map->capacity);
     FILE* stats = fopen("temp.txt", "w");
     fprintf(stats, "hash_num, bucket_size\n");
-    // printf("%d line\n", __LINE__);
-    // printf("%ld\n", (int64_t)stats);
-    // printf("%d line\n", __LINE__);
     int cnt = 0;
     int sum = 0, non_zero = 0;
     for (size_t i = 0; i < map->capacity; i++) {
@@ -91,8 +93,6 @@ int main() {
             sum += map->lists[i].size;
             ++non_zero;
         }
-        // printf("ind:%lu ", i);
-        // printlist(&map->lists[i]);
 
     }
     fclose(stats);

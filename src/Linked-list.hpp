@@ -9,6 +9,7 @@
 #include "alloc_tools.hpp"
 #include "string_tools.hpp"
 #include "hash_tools.hpp"
+#include "global_def.hpp"
 typedef char* HKey;
 typedef char* HValue;
 

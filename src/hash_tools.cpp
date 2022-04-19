@@ -12,16 +12,15 @@ __attribute__((noinline)) uint64_t asmStrHashCode(char* str) {
     uint64_t hash = 123456;
     __asm__ ( ".intel_syntax noprefix\n\t"
         "mov rsi, %1\n\t"
-        "mov rbx, 1234\n\t" /* ассемблерная вставка */
-        "mov rcx, 0\n\t" /* ассемблерная вставка */
+        "mov rbx, 1234\n\t"
+        "mov rcx, 0\n\t" 
         "mov rax, 0\n\t"
-        "begin:\n\t" /* ассемблерная вставка */
+        "begin:\n\t" 
         "lodsb \n\t"
         "test al, al\n\t"
         "je end\n\t"
         "mov rcx, rbx\n\t"
         "shl rbx, 7\n\t"
-        // "xor rbx, rax\n\t"
         "add rbx, rcx\n\t"
         "xor rbx, rax\n\t"
         "jmp begin\n\t"

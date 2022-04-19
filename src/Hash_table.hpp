@@ -1,3 +1,4 @@
+#include "global_def.hpp"
 #include "Linked-list.hpp"
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,10 +7,13 @@
 #include <inttypes.h>
 #include <malloc.h>
 
-// #define HASHCODE(a) asmStrHashCode((a))
-#define HASHCODE(a) strHashCode((a))
-#define NO_RE_HASH 1
-// #define ASM_ALLOC
+#ifdef USE_ASM_OPT
+    #define HASHCODE(a) asmStrHashCode((a))
+    #define ASM_ALLOC
+#else
+    #define HASHCODE(a) strHashCode((a))
+#endif
+
 
 static const float hashmap_max_load = 0.7f;
 #if NO_RE_HASH == 0
