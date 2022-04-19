@@ -123,8 +123,9 @@ HValue get(Hashmap *map, HKey key) {
 #ifndef ASM_ALLOC
     HKey n_value  = key;
 #else
-    HKey n_value  = (char*) aligned_alloc(32, 32);
-    strcpy(n_value, key);
+    HKey n_value  = key;
+    // HKey n_value  = (char*) aligned_alloc(32, 32);
+    // strcpy(n_value, key);
 #endif
     if (map->lists[index].capacity != 0) {
         int find_ind =  find_item_list(&map->lists[index], n_value);
@@ -133,7 +134,7 @@ HValue get(Hashmap *map, HKey key) {
         }
     }
 #ifdef ASM_ALLOC
-    free(n_value);
+    // free(n_value);
 #endif
     return retVal;
 }
@@ -146,8 +147,9 @@ Entry* Hashmap_remove(Hashmap *map, HKey key) {
 #ifndef ASM_ALLOC
     HKey n_value  = key;
 #else
-    HKey n_value  = (char*) aligned_alloc(32, 32);
-    strcpy(n_value, key);
+    HKey n_value  = key;
+    // HKey n_value  = (char*) aligned_alloc(32, 32);
+    // strcpy(n_value, key);
 #endif
 
     if (map->lists[index].capacity != 0) {
@@ -161,7 +163,7 @@ Entry* Hashmap_remove(Hashmap *map, HKey key) {
     }
     
 #ifdef ASM_ALLOC
-    free(n_value);
+    // free(n_value);
 #endif
     map->size--;
     return content;

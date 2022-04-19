@@ -15,7 +15,7 @@ char *randstring(size_t length) {
     char *randomString = NULL;
 
     if (length) {
-        randomString = (char*) malloc(sizeof(char) * (length +1));
+        randomString = (char*) aligned_alloc(32, 32);
         // randomString[0] = 'a';
         if (randomString) {            
             for (int n = 0;n < length;n++) {            
@@ -37,9 +37,9 @@ char *randstring(size_t length) {
 
 #define DEBUG
 // #undef DEBUG
-const size_t insert_num_target = 1400000;
-const size_t find_num_target   = 14000000;
-const size_t remove_num_target = 14000000;
+const size_t insert_num_target = 14000;
+const size_t find_num_target   = 140000;
+const size_t remove_num_target = 140000;
 const size_t rand_str_len = 15;
 
 int main() {
