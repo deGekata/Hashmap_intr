@@ -8,7 +8,8 @@ __attribute__((noinline)) uint64_t strHashCode(char* str) {
     return hash;
 }
 
-__attribute__((noinline)) uint64_t asmStrHashCode(char* str) {
+// __attribute__((noinline)) uint64_t asmStrHashCode(const char* val) {
+uint64_t asmStrHashCode(const char* val) {
     // uint64_t hash = 123456;
     // __asm__ ( ".intel_syntax noprefix\n\t"
     //     "mov rsi, %1\n\t"
@@ -32,21 +33,23 @@ __attribute__((noinline)) uint64_t asmStrHashCode(char* str) {
     //     : "%rsi", "%rax", "%rcx", "%rbx" /* разрушаемые регистры */
     //     );
     // return hash;
-     size_t hash = 0;
-    __asm__ (".intel_syntax noprefix\n\t"
-        "mov rcx, 4\n\t"
-        "0:\n\t"
-        "mov rax, [%[arg_val]]\n\t"
-        "crc32 %[ret_val], rax\n\t"
-        "add %[arg_val], 8\n\t"
-        "loop 0b\n\t"
-        "1:\n\t"
+    uint32_t elem_hash = 0;
+
+    asm (
+        ".intel_syntax noprefix\n\t"
+        "mov rcx, 8\n\t"
+        "xor %0, %0\n\t"
+        "hash%=:\n\t"
+        "       crc32 %0, dword ptr [rdi]\n\t"
+        "       add rdi, 4\n\t"
+        "       loop hash%=\n\t"
         ".att_syntax prefix\n\t"
-        : [ret_val]"=S"(hash)
-        : [arg_val]"D"(str)
-        :"%rax", "%rcx", "cc"
+        : "=r"(elem_hash)
+        : "d"(val)
+        : "rcx", "rdi", "rax"
     );
-    return hash;
+    
+    return elem_hash;
 }
 
 uint64_t asciiHashCode(char* str) {

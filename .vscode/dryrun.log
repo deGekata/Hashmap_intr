@@ -1,7 +1,29 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr'
  
-gcc bin/alloc_tools.o bin/avx_tools.o bin/Hash_table.o bin/hash_tools.o bin/Linked-list.o bin/main.o bin/string_tools.o -o a.out 
+gcc ./src/string_tools.cpp -MM -MT 'bin/string_tools.o bin/string_tools.d' -MF bin/string_tools.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/main.cpp -MM -MT 'bin/main.o bin/main.d' -MF bin/main.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/Linked-list.cpp -MM -MT 'bin/Linked-list.o bin/Linked-list.d' -MF bin/Linked-list.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/hash_tools.cpp -MM -MT 'bin/hash_tools.o bin/hash_tools.d' -MF bin/hash_tools.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/Hash_table.cpp -MM -MT 'bin/Hash_table.o bin/Hash_table.d' -MF bin/Hash_table.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/avx_tools.cpp -MM -MT 'bin/avx_tools.o bin/avx_tools.d' -MF bin/avx_tools.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/alloc_tools.cpp -MM -MT 'bin/alloc_tools.o bin/alloc_tools.d' -MF bin/alloc_tools.d -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+ 
+gcc ./src/alloc_tools.cpp -c -o bin/alloc_tools.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/avx_tools.cpp -c -o bin/avx_tools.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/Hash_table.cpp -c -o bin/Hash_table.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/hash_tools.cpp -c -o bin/hash_tools.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/Linked-list.cpp -c -o bin/Linked-list.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/main.cpp -c -o bin/main.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+gcc ./src/string_tools.cpp -c -o bin/string_tools.o -fPIE -Wall -Wextra -std=c++17  -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
+nasm -f elf64 ./src/finder.asm -o ./bin/finder.o
+gcc bin/alloc_tools.o bin/avx_tools.o bin/Hash_table.o bin/hash_tools.o bin/Linked-list.o bin/main.o bin/string_tools.o ./bin/finder.o  -o a.out 
 ./a.out
 make: Leaving directory '/mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr'
  

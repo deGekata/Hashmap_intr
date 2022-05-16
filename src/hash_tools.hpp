@@ -4,7 +4,8 @@
 
 __attribute__((noinline)) uint64_t strHashCode(char* str);
 
-__attribute__((noinline)) uint64_t asmStrHashCode(char* str);
+// __attribute__((noinline)) uint64_t asmStrHashCode(const char* str);
+uint64_t asmStrHashCode(const char* str);
 
 
 uint64_t asciiHashCode(char* str);

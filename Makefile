@@ -5,7 +5,7 @@ OUT_FILE_NAME = $(APPLICATION).out
 
 # Сompiler options
 CC = gcc
-CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD)
+CXXFLAGS = -fPIE -Wall -Wextra -std=c++$(GXX_STANDARD)
 CXXFLAGS += -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat 
 CXXFLAGS += -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2
 # CXXFLAGS += -mavx -mavx2 -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2  -mavx512f  -mavx512pf  -mavx512er  -mavx512cd  -mavx512vl -mavx512bw  -mavx512dq  -mavx512ifma  -mavx512vbmi  -msha  -maes 
@@ -43,7 +43,8 @@ VPATH = echo $(subst \,/,$(dir $(SRC_FULL_PATH)))
 
 # Build project
 $(BUILD_PATH)/$(OUT_FILE_NAME): $(OBJ) Makefile
-	$(CC) $(OBJ) -o a.out $(LXXFLAGS)
+	nasm -f elf64 ./src/finder.asm -o ./bin/finder.o
+	$(CC) $(OBJ) ./bin/finder.o  -o a.out $(LXXFLAGS)
 	./a.out
 
 # Dependency checking

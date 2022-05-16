@@ -1,12 +1,13 @@
-# Here is the optimisation that I applied with help of callgrind and complied Kcachegrind
+# Here is the optimisztion that I applied with help of callgrind and complied Kcachegrind
 
 note:
   * average count of elements in every bucket is 14 (forced table to have fixed size = 1.4 * 1e5)
-  * Functions (get\remove) were tested on 1.4 * 1e6 amount of elements
+  * Functions (get/remove) were tested on 1.4 * 1e6 amount of elements
 
-## Here is comparison:
+# Here is comparison:
 
-* ### No hash optimisation:
+* ## No hash optimization:
+  (gnu hash)
   ```
   __attribute__((noinline)) uint64_t strHashCode(char* str) {
     uint64_t hash = 123456;
@@ -17,11 +18,15 @@ note:
     return hash;
   }
   ```
+  time: 28.7 seconds
+
   results:
-  ![image info](./resources/images/no_asm_opt.png)
+
+  ![image info](./resources/images/no_asm.png)
   
-  
-* ### Hash optimisation with __asm__:
+
+* ## Hash optimization with __asm__ (crc32):
+  (gnu hash was changed to crc32 with hardware acceleration)
   ```
   __attribute__((noinline)) uint64_t asmStrHashCode(char* str) {
      size_t hash = 0;
@@ -41,8 +46,89 @@ note:
     return hash;
   }
   ```
+
+  time: 12.3 seconds (2.3x times faster than previous/base)
+
+  results: 
+
+  ![image info](./resources/images/hash_opt.png)
+
+* ## Cmp optimization:
+  ```
+  int my_asm_cmp(const char* first, const char* second) {
+    __m256i mfst = _mm256_load_si256((__m256i*) first);
+    __m256i mscd = _mm256_load_si256((__m256i*) second);
+    
+    return  1 + _mm256_movemask_epi8(_mm256_cmpeq_epi8(mfst, mscd));
+  }
+  ```
+  time: 11.0 seconds (2.61x times faster than base, 1.12x times faster than previous)
+
   results:
-  ![image info](./resources/images/asm_opt.png)
+
+  ![image info](./resources/images/hash_cmp.png)
 
 
-In cocnlusion, hash function has been optimized twice, but there are some more optimisations: hashes of key can be stored in Entry structure, so when strings aren't equal, we can determine it faster
+* ## Find in list optimization:
+  ```
+  extern "C" int64_t find_list(LinkedList* list, HKey val);
+  __attribute__((noinline)) int64_t decor(LinkedList* list, HKey val) {
+    return find_list(list, val);
+  }
+
+  assembler code:
+  find_list:
+                mov rdx, rdi ; replase list* to rdx
+                mov r9, [rdx + 48] ;list->data
+                mov r9, [r9 + 24] ; r9 now is cur_ind
+                mov rcx, [rdx]  ; now rcx - size
+                mov rax, rcx
+                mov rdx, [rdx + 48] ;now rdx  is list->data
+                ; r9 - cur_ind
+                ; rdx - list->data
+                ; rcx - size
+
+        .find_loop:
+                test rcx, rcx
+                jz .doesnt_exist
+
+                mov rdi, r9
+                imul rdi, 40
+                mov rdi, [rdx + rdi + 8]
+                call _Z10my_asm_cmpPKcS0_
+                
+                test rax, rax
+                jz .exists
+                
+                mov rdi, r9
+                imul rdi, 40
+                mov r9, [rdx + rdi + 24]
+                dec rcx
+                jmp .find_loop
+            
+        .doesnt_exist:
+                mov rax, 0
+                ret
+
+        .exists:
+                mov rax, r9
+                ret
+    
+    ret
+  ```
+  time: 10.1 seconds (2.81x times faster than base, 1.05 times faster than previous)
+
+  results:
+
+  ![image info](./resources/images/hash_cmp_find.png)
+
+
+* ## After inlining:
+  time: 10.2 seconds (previous time: 10.1, delta 0.1 sec) 
+
+  It is thought to be a measurement error. Programs were compiled with -O3 compilation key, so they could have been inlined already. Due to small speed changes detailed profiler data do not needed
+
+
+
+
+In conclusion, further optimizations are not required, as they will only harm portability and speed up the program extremely poorly.

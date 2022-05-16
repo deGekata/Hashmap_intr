@@ -9,12 +9,12 @@ const char* Next_link_color = "blue";
 const char* Prev_link_color = "red";
 const char* Free_link_color = "orange";
 
+// __attribute__((noinline)) int64_t decor(LinkedList* list, HKey val) {
+int64_t decor(LinkedList* list, HKey val) {
+    return find_list(list, val);
+}
 
-#ifdef USE_ASM_OPT
-    #define CMP_EQ(a, b) (my_asm_cmp((a), (b)) == 0)
-#else
-    #define CMP_EQ(a, b) (my_strcmp((a), (b)) == 0)
-#endif
+
 void EntryCtor(Entry* ptr, HKey key, HValue value) {
     char* ptr_ = (char*)0x280000002a;
     ptr->key = (char*) malloc(strlen(key) + 1);
@@ -231,7 +231,7 @@ int find_item_list(LinkedList* list, Entry* val) {
     return cur_ind;
 }
 
-int find_item_list(LinkedList* list, HKey val) {
+int64_t find_item_list(LinkedList* list, HKey val) {
     int cur_ind = list->data[list->head].next;
     int size = list->size;
     while (size != 0) {

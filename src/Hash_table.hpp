@@ -7,9 +7,8 @@
 #include <inttypes.h>
 #include <malloc.h>
 
-#ifdef USE_ASM_OPT
+#ifdef USE_ASM_HASH
     #define HASHCODE(a) asmStrHashCode((a))
-    #define ASM_ALLOC
 #else
     #define HASHCODE(a) strHashCode((a))
 #endif
@@ -19,7 +18,7 @@ static const float hashmap_max_load = 0.7f;
 #if NO_RE_HASH == 0
     static const size_t hashmap_base_size = 1000;
 #else
-    static const size_t hashmap_base_size = 10000;
+    static const size_t hashmap_base_size = BASE_NO_REHASH_SIZE;
 #endif
 
 static const size_t hashmap_extent_coef = 2;
@@ -42,7 +41,31 @@ void Hashmap_insert(Hashmap **_map_, HKey key, HValue value);
 
 Hashmap* Hashmap_rehashUp(Hashmap **_map_, HKey key, HValue value);
 
-HValue get(Hashmap *map, HKey key);
+// static inline HValue get(Hashmap *map, HKey key);
+static inline  HValue get(Hashmap *map, HKey key) {
+    unsigned long long hash = HASHCODE(key);
+    // printf("key:'%s', ret = %lu\n", key, hash);
+    size_t index = (hash % map->capacity);
+    HValue retVal = NULL;
+#ifndef ASM_ALLOC
+    HKey n_value  = key;
+#else
+    HKey n_value  = key;
+    // HKey n_value  = (char*) aligned_alloc(32, 32);
+    // strcpy(n_value, key);
+#endif
+    if (map->lists[index].capacity != 0) {
+        int find_ind =  FIND_IN_LIST(&map->lists[index], n_value);
+        // int find_ind =  find_item_list(&map->lists[index], n_value);
+        if (find_ind) {
+            retVal = map->lists[index].data[find_ind].elem.value;
+        }
+    }
+#ifdef ASM_ALLOC
+    // free(n_value);
+#endif
+    return retVal;
+}
 
 
 Entry* Hashmap_remove(Hashmap *map, HKey key);

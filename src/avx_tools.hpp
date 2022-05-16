@@ -1,6 +1,7 @@
 #include <emmintrin.h>
 #include <immintrin.h>
-
+#include <string.h>
+#include <assert.h>
 union mmxi_t;
 
 union mmxf_t {

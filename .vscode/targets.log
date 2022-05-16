@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr 14 15:20:04 2022
+# Make data base, printed on Mon May  2 15:11:05 2022
 
 # Variables
 
@@ -45,7 +45,7 @@ MAKEFILE_LIST :=  Makefile bin/alloc_tools.d bin/avx_tools.d bin/Hash_table.d bi
 # 'override' directive
 GNUMAKEFLAGS := 
 # makefile (from 'Makefile', line 22)
-CXXFLAGS = -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O0 -g -fdiagnostics-color=always
+CXXFLAGS = -fPIE -Wall -Wextra -std=c++$(GXX_STANDARD) -g -Wc++0x-compat -Wc++11-compat -Wc++14-compat  -mmmx  -msse  -msse2  -msse3  -mssse3  -msse4.1  -msse4.2  -msse4  -mavx -mavx2 -O3 -g -fdiagnostics-color=always
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
@@ -57,7 +57,7 @@ VSCODE_CWD = /mnt/c/Users/Gekata/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/gekata/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/MiKTeX/miktex/bin/x64/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/Compilers/Tools:/mnt/c/Program Files/Cloudflare/Cloudflare WARP/:/mnt/c/Program Files/NASM:/mnt/c/Program Files/AMD/AMDuProf/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/Gekata/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gekata/.dotnet/tools:/mnt/c/Users/Gekata/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/MinGW/bin:/mnt/c/Users/Gekata/AppData/Local/atom/bin:/snap/bin
+PATH = /home/gekata/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Microsoft SQL Server/130/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/MiKTeX/miktex/bin/x64/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/d/Compilers/Tools:/mnt/c/Program Files/NASM:/mnt/c/Program Files/AMD/AMDuProf/bin:/mnt/c/Program Files/CMake/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python38/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Gekata/AppData/Local/Programs/Python/Python39/:/mnt/c/Program Files/MySQL/MySQL Shell 8.0/bin/:/mnt/c/Users/Gekata/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gekata/.dotnet/tools:/mnt/c/Users/Gekata/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/Gekata/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/MinGW/bin:/mnt/c/Users/Gekata/AppData/Local/atom/bin:/snap/bin
 # environment
 NAME = DESKTOP-HNINT23
 # makefile (from 'Makefile', line 42)
@@ -65,7 +65,7 @@ VPATH = echo $(subst \,/,$(dir $(SRC_FULL_PATH)))
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-f9a61725-d410-44be-9b7b-99bf832bb6b0.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-6bf3350f-b72d-401c-9286-fe5d24e4f87e.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -83,7 +83,7 @@ PWD = /mnt/c/Users/Gekata/Desktop/GitProjects/Hashmap_intr
 # default
 .LOADED := 
 # environment
-WSL_INTEROP = /run/WSL/31_interop
+WSL_INTEROP = /run/WSL/12_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -125,7 +125,7 @@ EXLUDED =
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Gekata/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.0
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/Gekata/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.2
 # default
 MAKE_COMMAND := make
 # default
@@ -191,20 +191,20 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 46, inode 7036874418031878): 19 files, no impossibilities.
-# ./src (device 46, inode 18858823439883577): 15 files, no impossibilities.
+# . (device 58, inode 7036874418031878): 20 files, no impossibilities.
+# ./src (device 58, inode 18858823439883577): 20 files, no impossibilities.
 # echo: could not be stat'd.
 
-# 34 files, no impossibilities in 3 directories.
+# 40 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
 bin/%.o: %.cpp Makefile
-#  recipe to execute (from 'Makefile', line 54):
+#  recipe to execute (from 'Makefile', line 55):
 	$(CC) $< -c -o $@ $(CXXFLAGS)
 
 bin/%.d: %.cpp Makefile
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # 2 implicit rules, 0 (0.0%) terminal.
@@ -214,7 +214,7 @@ bin/%.d: %.cpp Makefile
 # Not a target:
 src/Hash_table.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 02:38:31.1074582
+#  Last modified 2022-04-27 16:11:09.6601343
 #  File has been updated.
 #  Successfully updated.
 
@@ -233,17 +233,17 @@ bin/avx_tools.o: src/avx_tools.cpp src/avx_tools.hpp
 # Not a target:
 ./src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:10:46.755876
+#  Last modified 2022-04-27 18:48:23.2692243
 #  File has been updated.
 #  Successfully updated.
 
 bin/alloc_tools.d: ./src/alloc_tools.cpp Makefile src/alloc_tools.cpp src/alloc_tools.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'alloc_tools'
-#  Last modified 2022-04-14 15:19:59.5463792
+#  Last modified 2022-05-02 15:11:01.5633312
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # Not a target:
@@ -261,29 +261,36 @@ all:
 # Not a target:
 src/avx_tools.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:03:17.9839525
+#  Last modified 2022-04-29 12:11:31.7846311
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ./src/hash_tools.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 03:07:10.6440991
+#  Last modified 2022-04-29 11:50:12.859215
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-./src/Hash_table.cpp:
+src/timeit.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:19:43.9731271
+#  Last modified 2022-04-22 12:43:05.2041397
 #  File has been updated.
  
 #  Successfully updated.
 
 # Not a target:
+./src/Hash_table.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-27 16:02:41.8754315
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:19:56.1316132
+#  Last modified 2022-04-25 20:31:06.3197767
 #  File has been updated.
 #  Successfully updated.
 
@@ -294,19 +301,19 @@ src/alloc_tools.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-bin/Linked-list.d: ./src/Linked-list.cpp Makefile src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/Linked-list.d: ./src/Linked-list.cpp Makefile src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp src/global_def.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Linked-list'
-#  Last modified 2022-04-14 15:19:59.396524
+#  Last modified 2022-05-02 15:11:01.2501609
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # Not a target:
 ./src/avx_tools.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:01:08.8486393
+#  Last modified 2022-04-29 12:11:38.3072195
 #  File has been updated.
 #  Successfully updated.
 
@@ -325,25 +332,32 @@ src/alloc_tools.hpp:
 bin/string_tools.d: ./src/string_tools.cpp Makefile src/string_tools.cpp src/string_tools.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'string_tools'
-#  Last modified 2022-04-14 15:19:59.2516011
+#  Last modified 2022-05-02 15:11:00.7943044
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
-bin/main.d: ./src/main.cpp Makefile src/main.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/main.d: ./src/main.cpp Makefile src/main.cpp src/Hash_table.hpp src/global_def.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp src/timeit.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-04-14 15:19:59.3354741
+#  Last modified 2022-05-02 15:11:01.1176664
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # Not a target:
 src/Linked-list.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:03:38.6922101
+#  Last modified 2022-04-29 12:09:13.5948967
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/global_def.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-27 17:01:27.6399186
 #  File has been updated.
 #  Successfully updated.
 
@@ -356,13 +370,13 @@ src/Linked-list.cpp:
 bin/hash_tools.d: ./src/hash_tools.cpp Makefile src/hash_tools.cpp src/hash_tools.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'hash_tools'
-#  Last modified 2022-04-14 15:19:59.41795
+#  Last modified 2022-05-02 15:11:01.3027066
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
-bin/Linked-list.o: src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/Linked-list.o: src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp src/global_def.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -374,19 +388,19 @@ bin/Linked-list.o: src/Linked-list.cpp src/Linked-list.hpp src/avx_tools.hpp src
 #  File has been updated.
 #  Successfully updated.
 
-bin/Hash_table.d: ./src/Hash_table.cpp Makefile src/Hash_table.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/Hash_table.d: ./src/Hash_table.cpp Makefile src/Hash_table.cpp src/Hash_table.hpp src/global_def.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'Hash_table'
-#  Last modified 2022-04-14 15:19:59.4773537
+#  Last modified 2022-05-02 15:11:01.4297963
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 # Not a target:
 src/Linked-list.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 02:40:26.602528
+#  Last modified 2022-04-29 11:51:14.0469468
 #  File has been updated.
 #  Successfully updated.
 
@@ -400,7 +414,7 @@ src/string_tools.cpp:
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:10:46.755876
+#  Last modified 2022-04-27 18:48:23.2692243
 #  File has been updated.
 #  Successfully updated.
 
@@ -409,17 +423,17 @@ init:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 62):
+#  recipe to execute (from 'Makefile', line 63):
 	if not exist $(BIN_DIR) md $(BIN_DIR)
 	if not exist $(BUILD_PATH) md $(BUILD_PATH)
 
 bin/avx_tools.d: ./src/avx_tools.cpp Makefile src/avx_tools.cpp src/avx_tools.hpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'avx_tools'
-#  Last modified 2022-04-14 15:19:59.522378
+#  Last modified 2022-05-02 15:11:01.5213191
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from 'Makefile', line 58):
+#  recipe to execute (from 'Makefile', line 59):
 	$(CC) $< -MM -MT '$(BIN_DIR)/$*.o $(BIN_DIR)/$*.d' -MF $@ $(CXXFLAGS)
 
 bin/string_tools.o: src/string_tools.cpp src/string_tools.hpp
@@ -427,7 +441,7 @@ bin/string_tools.o: src/string_tools.cpp src/string_tools.hpp
 #  Modification time never checked.
 #  File has not been updated.
 
-bin/main.o: src/main.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/main.o: src/main.cpp src/Hash_table.hpp src/global_def.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp src/timeit.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -442,7 +456,7 @@ src/string_tools.hpp:
 # Not a target:
 src/Hash_table.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:19:43.9731271
+#  Last modified 2022-04-27 16:02:41.8754315
 #  File has been updated.
 #  Successfully updated.
 
@@ -454,14 +468,14 @@ bin/hash_tools.o: src/hash_tools.cpp src/hash_tools.hpp
 # Not a target:
 ./src/Linked-list.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:03:38.6922101
+#  Last modified 2022-04-29 12:09:13.5948967
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/hash_tools.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 03:07:10.6440991
+#  Last modified 2022-04-29 11:50:12.859215
 #  File has been updated.
 #  Successfully updated.
 
@@ -470,13 +484,14 @@ build-debug/Hashmap_intr.out: bin/alloc_tools.o bin/avx_tools.o bin/Hash_table.o
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 46):
-	$(CC) $(OBJ) -o a.out $(LXXFLAGS)
+	nasm -f elf64 ./src/finder.asm -o ./bin/finder.o
+	$(CC) $(OBJ) ./bin/finder.o  -o a.out $(LXXFLAGS)
 	./a.out
 
 # Not a target:
 src/hash_tools.hpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 02:41:46.5997348
+#  Last modified 2022-04-29 11:50:40.4132768
 #  File has been updated.
 #  Successfully updated.
 
@@ -485,10 +500,10 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 66):
+#  recipe to execute (from 'Makefile', line 67):
 	if exist $(BIN_DIR) rmdir /S /Q $(BIN_DIR)
 
-bin/Hash_table.o: src/Hash_table.cpp src/Hash_table.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
+bin/Hash_table.o: src/Hash_table.cpp src/Hash_table.hpp src/global_def.hpp src/Linked-list.hpp src/avx_tools.hpp src/alloc_tools.hpp src/string_tools.hpp src/hash_tools.hpp
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -496,12 +511,12 @@ bin/Hash_table.o: src/Hash_table.cpp src/Hash_table.hpp src/Linked-list.hpp src/
 # Not a target:
 src/avx_tools.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-14 15:01:08.8486393
+#  Last modified 2022-04-29 12:11:38.3072195
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=42/1024=4%, Rehash=0, Collisions=9/213=4%
+# Load=44/1024=4%, Rehash=0, Collisions=9/219=4%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -509,12 +524,12 @@ src/avx_tools.cpp:
 # General ('VPATH' variable) search path:
 # echo:./src:./src:./src:./src:./src:./src:./src
 
-# strcache buffers: 1 (0) / strings = 88 / storage = 1190 B / avg = 13 B
-# current buf: size = 8162 B / used = 1190 B / count = 88 / avg = 13 B
+# strcache buffers: 1 (0) / strings = 95 / storage = 1272 B / avg = 13 B
+# current buf: size = 8162 B / used = 1272 B / count = 95 / avg = 13 B
 
-# strcache performance: lookups = 197 / hit rate = 55%
+# strcache performance: lookups = 207 / hit rate = 54%
 # hash-table stats:
-# Load=88/8192=1%, Rehash=0, Collisions=10/197=5%
-# Finished Make data base on Thu Apr 14 15:20:04 2022
+# Load=95/8192=1%, Rehash=0, Collisions=10/207=5%
+# Finished Make data base on Mon May  2 15:11:05 2022
 
  

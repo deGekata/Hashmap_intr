@@ -26,7 +26,7 @@ void Hashmap_raw_put(Hashmap **_map_, HKey key, HValue value) {
     Hashmap *map = *_map_;
     unsigned long long hash = HASHCODE(key);
     size_t index = (hash % map->capacity);
- 
+    // printf("key:'%s', ret = %lu\n", key, hash);
 
     if (map->size < map->remap_size || NO_RE_HASH) {
 
@@ -35,13 +35,13 @@ void Hashmap_raw_put(Hashmap **_map_, HKey key, HValue value) {
             push_back_list(&map->lists[index], key, value);
             // listCreateGraph(&map->lists[index]);
         } else {
-            int entry_pos = find_item_list(&map->lists[index], key);
-            
+            int entry_pos =  FIND_IN_LIST(&map->lists[index], key);
+
             if (entry_pos == 0) {
                 push_back_list(&map->lists[index], key, value);
             } else {
                 // printf("wtf");
-                printf("%s | %s\n", map->lists[index].data[entry_pos].elem.key, key);
+                // printf("%s | %s\n", map->lists[index].data[entry_pos].elem.key, key);
                 free(map->lists[index].data[entry_pos].elem.value);
                 map->lists[index].data[entry_pos].elem.value = value;
             }
@@ -69,15 +69,15 @@ void Hashmap_insert(Hashmap **_map_, HKey key, HValue value) {
 #else
     if (strlen(key) > 31 || strlen(value) > 31) return;
     HKey n_key  = (char*) aligned_alloc(32, 32);
+    *(__m256 *)n_key = _mm256_set1_ps(0);
     HKey n_value  = (char*) aligned_alloc(32, 32);
+    *(__m256 *)n_value = _mm256_set1_ps(0);
+
 #endif
-    // ptr->value = (char*) malloc(strlen(value) + 1);
+
     strcpy(n_key, key);
     strcpy(n_value, value);
-    // if ((int64_t)(e->key) == 0xbf000000c1 ||(int64_t)(e->value) == 0xbf000000c1) {
-    //     printf("wtf");
-    //     exit(0);
-    // }
+
     Hashmap_raw_put(_map_, n_key, n_value);
     // free(e);
 }
@@ -95,10 +95,7 @@ Hashmap* Hashmap_rehashUp(Hashmap **_map_, HKey key, HValue value) {
             // printf("%d lol\n", i);
             continue;
         }
-        // if (i == 97) {
-        //     // listCreateGraph(&map->lists[i]);
-        //     printf("abcd");
-        // }
+
 
         int cur_ind = map->lists[i].data[map->lists[i].head].next;
 
@@ -116,28 +113,29 @@ Hashmap* Hashmap_rehashUp(Hashmap **_map_, HKey key, HValue value) {
     return newMap;
 }
 
-HValue get(Hashmap *map, HKey key) {
-    unsigned long long hash = HASHCODE(key);
-    size_t index = (hash % map->capacity);
-    HValue retVal = NULL;
-#ifndef ASM_ALLOC
-    HKey n_value  = key;
-#else
-    HKey n_value  = key;
-    // HKey n_value  = (char*) aligned_alloc(32, 32);
-    // strcpy(n_value, key);
-#endif
-    if (map->lists[index].capacity != 0) {
-        int find_ind =  find_item_list(&map->lists[index], n_value);
-        if (find_ind) {
-            retVal = map->lists[index].data[find_ind].elem.value;
-        }
-    }
-#ifdef ASM_ALLOC
-    // free(n_value);
-#endif
-    return retVal;
-}
+// static inline  HValue get(Hashmap *map, HKey key) {
+//     unsigned long long hash = HASHCODE(key);
+//     // printf("key:'%s', ret = %lu\n", key, hash);
+//     size_t index = (hash % map->capacity);
+//     HValue retVal = NULL;
+// #ifndef ASM_ALLOC
+//     HKey n_value  = key;
+// #else
+//     HKey n_value  = key;
+//     // HKey n_value  = (char*) aligned_alloc(32, 32);
+//     // strcpy(n_value, key);
+// #endif
+//     if (map->lists[index].capacity != 0) {
+//         int find_ind =  find_item_list(&map->lists[index], n_value);
+//         if (find_ind) {
+//             retVal = map->lists[index].data[find_ind].elem.value;
+//         }
+//     }
+// #ifdef ASM_ALLOC
+//     // free(n_value);
+// #endif
+//     return retVal;
+// }
 
 
 Entry* Hashmap_remove(Hashmap *map, HKey key) {
